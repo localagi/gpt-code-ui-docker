@@ -16,7 +16,6 @@ jobs:
   call-docker-build-gpt-code-ui:
     uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@main
     with:
-      registry-dockerhub-enable: false
       registry-repo-name: gpt-code-ui
       tags: |
         type=schedule
