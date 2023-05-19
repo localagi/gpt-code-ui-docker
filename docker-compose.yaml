@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+
+  gpt-code-ui:
+    image: ghcr.io/localagi/gpt-code-ui:${GPTCODEUI_VERSION:-main}
+    environment:
+      OPENAI_API_KEY: "your open ai key"
+      APP_HOST: gpt-code-ui
+    ports:
+      - "8080:8080"
