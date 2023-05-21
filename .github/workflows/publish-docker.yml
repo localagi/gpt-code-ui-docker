@@ -17,6 +17,7 @@ jobs:
     uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@main
     with:
       registry-repo-name: gpt-code-ui
+      registry-readme: README.docker.md
       tags: |
         type=schedule
         type=ref,event=branch
