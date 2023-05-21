@@ -3,7 +3,7 @@ FROM python:3.10-slim-buster
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     apt-get update ; \
     apt-get upgrade -y ; \
-    apt-get install -y wget git python3 python3-pip
+    apt-get install -y wget python3 python3-pip
 
 RUN pip3 install --upgrade pip wheel
 
@@ -29,8 +29,7 @@ ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 
-ARG GPTCODEUI_VERSION="main"
-RUN git clone -b "$GPTCODEUI_VERSION" --depth 1 https://github.com/ricklamers/gpt-code-ui
+COPY --link . /gpt-code-ui
 WORKDIR /gpt-code-ui
 
 # prereqs for gpt-code-ui

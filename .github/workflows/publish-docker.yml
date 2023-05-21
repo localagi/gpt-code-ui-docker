@@ -14,9 +14,11 @@ permissions:
 jobs:
 
   call-docker-build-gpt-code-ui:
-    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@main
+    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@v2
     with:
       registry-repo-name: gpt-code-ui
+      context-repository: ricklamers/gpt-code-ui
+      context-repository-ref: ${{ github.ref_name }}
       registry-readme: README.docker.md
       tags: |
         type=schedule
