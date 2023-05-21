@@ -1,32 +1,52 @@
 # gpt-code-ui-docker
-Docker builds for https://github.com/ricklamers/gpt-code-ui
 
+Sophisticated docker builds for parent project [ricklamers/gpt-code-ui](https://github.com/ricklamers/gpt-code-ui). 
 
+![example workflow](https://github.com/localagi/gpt-code-ui-docker/actions/workflows/publish-docker.yml/badge.svg?branch=main)
 
+Easy setup. Compatible. Tweakable. Scaleable.
 
-## Run the app
+#### Supported platforms
+`amd64`, `arm64`
+
+#### Supported versions
+Containers follow the version scheme of the parent project
+
+`main` (default), `0.42.14`, etc.
+
+See [Releases](../../releases)
+
+## Prerequisites
+
+* `docker` and `docker compose` are available on your system
+
+## Run
+
 * get `docker-compose.yml`
 * update `OPENAI_API_KEY` in this file
 * `docker compose up` from same dir
-* open `http://localhost:8080` 
+* open `http://localhost:8080`
 
-### Run different version
-`GPTCODEUI_VERSION=0.42.14 docker compose up`
+### Runtime options
+Environment variables to set for the specific service
 
-#### Supported versions
-See [Releases](https://github.com/localagi/gpt-code-ui-docker/releases)
+#### version selection `GPTCODEUI_VERSION`
+Prepend, e.g. `GPTCODEUI_VERSION=0.42.14`
 
 
-### updating to latest `main`
+### Get the latest builds / update
 `docker compose pull`
 
-### cleanup
+### Cleanup
 `docker compose rm`
 
 ## Contributing
 
-Whenever there is a new version of gpt-code-ui or you require the latest main build, feel free to open an issue
+When there is a new version and there is need of builds or you require the latest main build, feel free to open an issue
 
 ## Problems?
 
-https://github.com/localagi/gpt-code-ui-docker/issues
+Open an issue on the [Issue Tracker](../../issues)
+
+## Limitations
+We cannot support issues regarding the base software. Please refer to the main project page mentioned in the second line of this card.
