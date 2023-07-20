@@ -4,7 +4,8 @@ services:
   gpt-code-ui:
     image: localagi/gpt-code-ui:${GPTCODEUI_VERSION:-main}
     environment:
-      OPENAI_API_KEY: "your open ai key"
+      OPENAI_API_KEY: "your bioinfoark key"
+      OPENAI_BASE_URL: https://oa.ai01.org
       APP_HOST: gpt-code-ui
     ports:
       - "8080:8080"
